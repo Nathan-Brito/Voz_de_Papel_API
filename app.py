@@ -73,6 +73,9 @@ def image_to_audio(image_path, audio_path):
     else:
         raise ValueError("Nenhum texto encontrado na imagem.")
 
+@app.route('/')
+def home():
+    return "Aplicação rodando!"
 
 @app.route('/image_to_audio', methods=['POST'])
 def app_process():
@@ -101,4 +104,4 @@ def app_process():
     return response
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host="0.0.0.0", port=int(os.getenv("PORT", 5000)))

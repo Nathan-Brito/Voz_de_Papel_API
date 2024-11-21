@@ -22,10 +22,13 @@ region = os.getenv("AZURE_REGION")
 speech_config = speechsdk.SpeechConfig(subscription=subscription_key, region=region)
 speech_config.speech_synthesis_voice_name = "pt-BR-FranciscaNeural"
 
-if 'render' in sys.argv[0].lower():
+import sys
+
+if 'RENDER' in os.environ:
     pytesseract.pytesseract.tesseract_cmd = "/usr/bin/tesseract"
 else:
     pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+
 
 
 def refine_with_gemini(text):
@@ -80,6 +83,11 @@ def image_to_audio(image_path, audio_path):
 @app.route('/')
 def home():
     return "Aplicação rodando!"
+
+@app.route('/check_tesseract', methods=['GET'])
+def check_tesseract():
+    return jsonify({"tesseract_path": pytesseract.pytesseract.tesseract_cmd})
+
 
 @app.route('/image_to_audio', methods=['POST'])
 def app_process():

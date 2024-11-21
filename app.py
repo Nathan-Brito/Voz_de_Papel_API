@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify, send_file
 import os
+import sys
 from dotenv import load_dotenv
 import cv2
 import pytesseract
@@ -21,7 +22,10 @@ region = os.getenv("AZURE_REGION")
 speech_config = speechsdk.SpeechConfig(subscription=subscription_key, region=region)
 speech_config.speech_synthesis_voice_name = "pt-BR-FranciscaNeural"
 
-pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+if 'render' in sys.argv[0].lower():
+    pytesseract.pytesseract.tesseract_cmd = "/usr/bin/tesseract"
+else:
+    pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
 
 def refine_with_gemini(text):

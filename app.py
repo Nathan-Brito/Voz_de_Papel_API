@@ -25,9 +25,11 @@ speech_config.speech_synthesis_voice_name = "pt-BR-FranciscaNeural"
 import sys
 
 if 'RENDER' in os.environ:
-    pytesseract.pytesseract.tesseract_cmd = "/usr/bin/tesseract"
+    pytesseract.pytesseract.tesseract_cmd = "/usr/bin/tesseract"  # Caminho correto no Docker
 else:
-    pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+    # Como estamos no Docker, o código não deve cair aqui, então você pode ignorar esta parte ou
+    # remover a configuração do Windows
+    pytesseract.pytesseract.tesseract_cmd = "/usr/bin/tesseract"
 
 
 
@@ -69,6 +71,7 @@ def preprocess_image(image_path):
     return binary_img
 
 def image_to_audio(image_path, audio_path):
+    print(f"Usando Tesseract no caminho: {pytesseract.pytesseract.tesseract_cmd}") 
     processed_image = preprocess_image(image_path)
 
     custom_config = r'--oem 3 --psm 6'

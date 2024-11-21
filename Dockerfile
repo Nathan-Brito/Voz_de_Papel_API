@@ -1,7 +1,11 @@
-FROM python:3.9-slim
+ENV RENDER=1
+
+FROM python:3.12.2
 
 RUN apt-get update && \
     apt-get install -y tesseract-ocr
+
+RUN tesseract --version
 
 
 COPY requirements.txt .

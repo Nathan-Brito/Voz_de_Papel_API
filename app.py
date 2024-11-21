@@ -8,12 +8,9 @@ import google.generativeai as genai
 import azure.cognitiveservices.speech as speechsdk
 import numpy as np
 
-
 app = Flask(__name__)
 
-
 load_dotenv()
-
 
 genai.configure(api_key=os.getenv("GEMINI_KEY"))
 
@@ -22,16 +19,10 @@ region = os.getenv("AZURE_REGION")
 speech_config = speechsdk.SpeechConfig(subscription=subscription_key, region=region)
 speech_config.speech_synthesis_voice_name = "pt-BR-FranciscaNeural"
 
-import sys
-
 if 'RENDER' in os.environ:
-    pytesseract.pytesseract.tesseract_cmd = "/usr/bin/tesseract"  # Caminho correto no Docker
-else:
-    # Como estamos no Docker, o código não deve cair aqui, então você pode ignorar esta parte ou
-    # remover a configuração do Windows
     pytesseract.pytesseract.tesseract_cmd = "/usr/bin/tesseract"
-
-
+else:
+    pytesseract.pytesseract.tesseract_cmd = "/usr/bin/tesseract"
 
 def refine_with_gemini(text):
     try:
@@ -71,7 +62,6 @@ def preprocess_image(image_path):
     return binary_img
 
 def image_to_audio(image_path, audio_path):
-    print(f"Usando Tesseract no caminho: {pytesseract.pytesseract.tesseract_cmd}") 
     processed_image = preprocess_image(image_path)
 
     custom_config = r'--oem 3 --psm 6'
@@ -87,11 +77,6 @@ def image_to_audio(image_path, audio_path):
 def home():
     return "Aplicação rodando!"
 
-@app.route('/check_tesseract', methods=['GET'])
-def check_tesseract():
-    return jsonify({"tesseract_path": pytesseract.pytesseract.tesseract_cmd})
-
-
 @app.route('/image_to_audio', methods=['POST'])
 def app_process():
     if 'image' not in request.files:
@@ -100,10 +85,8 @@ def app_process():
     image = request.files['image']
     image_path = "./temp_image.jpg"
     audio_path = "./output_audio.mp3"
-
     
     image.save(image_path)
-
 
     try:
         image_to_audio(image_path, audio_path)

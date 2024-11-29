@@ -1,5 +1,11 @@
 .env/
 
-.venv/
+.venv*
 
 .vscode/
+
+temp
+
+init.sql
+
+requirements.txt

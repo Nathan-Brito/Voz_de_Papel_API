@@ -78,14 +78,20 @@ Antes de começar, certifique-se de ter os seguintes itens instalados:
     7 - Criação das variáveis de ambiente: 
         - Crie um arquivo '.env' na raiz do projeto;
         - Configure as seguintes chaves: 
-            AZURE_KEY=<sua chave da API Azure>
+             AZURE_KEY=<sua chave da API Azure>
             AZURE_REGION=<sua região da API Azure>
             GEMINI_KEY=<sua chave da API Gemini>
+            DBNAME=<seu nome do banco de dados>
+            DBUSER=<seu usuário do banco de dados>
+            DBKEY=<senha do seu banco de dados>
+            DBHOST=<endereço IP do seu host>
+            DBPORT=<a porta do seu banco de dados>
 
     8 - Execute a aplicação:
         python app.py
 
 **Para Windows sem Docker:**
+
     1 - Clone o repositório:
         git clone <https://github.com/Nathan-Brito/Voz_de_Papel_API.git>
         cd Voz_de_Papel_API
@@ -120,6 +126,7 @@ Antes de começar, certifique-se de ter os seguintes itens instalados:
         python app.py
 
 **Para Linux sem Docker:**
+
     1 - Clone o repositório:
         git clone <https://github.com/Nathan-Brito/Voz_de_Papel_API.git>
         cd Voz_de_Papel_API
@@ -147,7 +154,11 @@ Antes de começar, certifique-se de ter os seguintes itens instalados:
         - Execute os comandos:
             sudo apt update
             sudo apt install postgresql postgresql-contrib
-            Configure o banco com os mesmos dados definidos no docker-compose.yml.
+            
+        - Configure o banco de dados com as credenciais especificadas:
+            - Usuário: <seu usuário>
+            - Senha: <sua senha>
+            - Banco: <nome do banco de dados>
 
     6 - Execute a aplicação:
         python3 app.py

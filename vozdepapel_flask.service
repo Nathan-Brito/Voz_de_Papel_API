@@ -1,0 +1,15 @@
+[Unit]
+Description=Voz de Papel Flask Application
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/path/to/your/project
+ExecStart=/path/to/your/venv/bin/gunicorn --workers 3 --bind 0.0.0.0:5000 app:app
+Environment=FLASK_APP=app.py
+Environment=FLASK_ENV=production
+EnvironmentFile=/path/to/.env
+
+[Install]
+WantedBy=multi-user.target

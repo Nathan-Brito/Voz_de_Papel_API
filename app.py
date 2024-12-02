@@ -12,12 +12,6 @@ import psycopg2
 import base64
 import time
 import glob
-import uuid
-
-if getattr(sys, 'frozen', False):
-    application_path = sys._MEIPASS
-else:
-    application_path = os.path.dirname(os.path.abspath(__file__)) 
 
 app = Flask(__name__)
 

@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS logs (
+    id SERIAL PRIMARY KEY,
+    ip VARCHAR(50) NOT NULL,
+    image BYTEA NOT NULL,
+    extracted_text TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

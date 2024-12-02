@@ -6,6 +6,7 @@
 
 temp
 
-init.sql
-
 requirements.txt
+
+postgres.service
+vozdepapel_flask.service

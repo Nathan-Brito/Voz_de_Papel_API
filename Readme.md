@@ -34,22 +34,23 @@ Este projeto é uma aplicação para auxiliar pessoas com deficiência visual a 
     2 - <http://ifms.pro.br:2007/image_to_audio>: requer uma imagem no corpo da requisição com a key 'image'. Essa requisição irá retornar um arquivo 'output_audio.mp3'; 
     3 - <http://ifms.pro.br:2007/logs>: requer um JSON com uma QUERY que seja um comando SELECT. Ele irá retornar um JSON com as respostas da requisição. 
 
-**PARA UTILIZAR O CÓDIGO**
+## **PARA UTILIZAR O CÓDIGO**
 
 ## Pré-requisitos:
 Antes de começar, certifique-se de ter os seguintes itens instalados:
  - Python 3.12; 
  - Docker; 
  - Biblioteca OCR: <https://sourceforge.net/projects/tesseract-ocr.mirror/>
-    Após instalação, digite no terminal:
-        plaintext
-        pip install tesseract
+    - Após instalação, digite no terminal:
+        - plaintext
+        - pip install tesseract
 
  -> Além disso, também é necessário estar conectado à internet, e ter o cabo de conexão do seu celular em mãos, assim como o celular. 
 
 ## Instalação:
 
 **Para Windows e Linux com Docker:**
+
     1 - Clone o repositório:
         git clone <https://github.com/Nathan-Brito/Voz_de_Papel_API.git>
         cd Voz_de_Papel_API

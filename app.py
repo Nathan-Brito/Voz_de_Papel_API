@@ -57,10 +57,10 @@ def clean_old_temp_files():
 def connect_to_db():
     try:
         connection = psycopg2.connect(
-            dbname="bdvozdepapel",
-            user="vozpapeladm",
-            password="VozPapelAdm",
-            host="0.0.0.0",
+            dbname="DBNAME",
+            user="DBUSER",
+            password="DBKEY",
+            host="DBHOST",
             port=5432
         )
     except Exception as e:

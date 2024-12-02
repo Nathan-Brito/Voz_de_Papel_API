@@ -60,7 +60,7 @@ def connect_to_db():
             dbname="bdvozdepapel",
             user="vozpapeladm",
             password="VozPapelAdm",
-            host="172.26.233.101",
+            host="0.0.0.0",
             port=5432
         )
     except Exception as e:
@@ -227,16 +227,6 @@ def app_process():
         return jsonify({"error": f"Erro ao processar a imagem: {str(e)}"}), 500
 
     response = send_file(audio_path, as_attachment=True, download_name="output_audio.mp3")
-
-    # @after_this_request
-    # def remove_files(response):
-    #     try:
-    #         os.remove(image_path)
-    #         os.remove(audio_path)
-    #         print("Arquivos temporários removidos com sucesso.")
-    #     except Exception as e:
-    #         print(f"Erro ao remover os arquivos temporários: {e}")
-    #     return response
 
     response.headers["X-Message"] = "Funcionou!"
     return response

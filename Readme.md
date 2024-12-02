@@ -1,19 +1,20 @@
-Aplicação de Leitura de Textos a partir de Fotos
+Voz de Papel
 
 Descrição do Projeto:
 Este projeto é uma aplicação para auxiliar pessoas com deficiência visual a ler textos em imagens focado na acessibilidade de conteúdos textuais de livros físicos. Utilizando tecnologias de reconhecimento óptico de caracteres (OCR) e síntese de fala, a aplicação permite que o usuário capture a página de um livro, e o sistema realiza a extração e leitura em áudio do conteúdo textual. Esta solução proporciona maior autonomia para pessoas com deficiência visual, facilitando o acesso à informação escrita.
 
 Funcionalidades:
- - Captura de imagens para análise;
- - Extração de texto utilizando uma biblioteca de OCR;
- - Síntese de áudio utilizando a bíblioteca gTTS;
+ - Extração de Texto: O aplicativo utiliza o Tesseract OCR para capturar e processar o texto presente na imagem enviada;
+ - Correção e Refinamento: O texto extraído é refinado utilizando a API Gemini para melhorar a gramática e a coerência;
+ - Conversão para Áudio: O texto é convertido em áudio utilizando a API Azure Speech Services, com suporte para a voz natural em português brasileiro;
+ - Armazenamento de Logs: Informações sobre as requisições (IP de origem, imagem codificada, texto extraído, etc.) são armazenadas em um banco de dados PostgreSQL para fins de análise e rastreamento.
 
 Tecnologias Utilizadas:
- - Frontend: React e React Native;
- - Backend: Flask; 
- - OCR (Reconhecimento Óptico de Caracteres): Tesseract.js, EasyOCR;
+ - Frontend: React Native;
+ - Backend: Python Flask; 
+ - OCR (Reconhecimento Óptico de Caracteres): Tesseract;
  - Pré processamento de imagem: OpenCV;
- - Síntese de áudio: gTTS
+ - Síntese de áudio: API Azure Speech Services;
  - Banco de Dados: PostgreSQL;
  - Outras Ferramentas: Docker.
 
@@ -22,6 +23,9 @@ Antes de começar, certifique-se de ter os seguintes itens instalados:
  - Python 3.12; 
  - Docker; 
  - Biblioteca OCR: <https://sourceforge.net/projects/tesseract-ocr.mirror/>
+    Após instalação, digite no terminal:
+        plaintext
+        pip install tesseract
 
  -> Além disso, também é necessário estar conectado à internet, e ter o cabo de conexão do seu celular em mãos, assim como o celular. 
 
@@ -91,7 +95,7 @@ Instalação:
     5 - Execute a aplicação:
         python3 app.py
 
-*Uso
+Uso
     1 - Acesse a aplicação em <https://ifms.pro.br:2007/image_to_audio>;
     2 - Faça upload de uma imagem contendo texto.
     3 - Aguarde o processamento e veja o texto extraído na tela.

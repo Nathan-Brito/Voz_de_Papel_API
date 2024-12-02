@@ -46,7 +46,7 @@ Instalação:
 
     5 - Acesse a API:
         A API estará disponível em:
-*        <http://localhost:>
+       <https://ifms.pro.br:2007/image_to_audio>
 
     Para Windows sem Docker
     1 - Clone o repositório:
@@ -92,6 +92,6 @@ Instalação:
         python3 app.py
 
 *Uso
-*    1 - Acesse a aplicação em <>;
+    1 - Acesse a aplicação em <https://ifms.pro.br:2007/image_to_audio>;
     2 - Faça upload de uma imagem contendo texto.
     3 - Aguarde o processamento e veja o texto extraído na tela.

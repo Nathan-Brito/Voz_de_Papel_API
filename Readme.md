@@ -167,7 +167,7 @@ Antes de começar, certifique-se de ter os seguintes itens instalados:
 ```plaintext 
 .
 ├── Voz_De_Papel.apk   # Apk da aplicação
-├── app.py/            # Código do backend
+├── app.py             # Código do backend
 ├── docker-compose.yml # Arquivo para orquestração com Docker
 ├── README.md          # Este arquivo
 ├── init.sql           # Inicialização do Banco de Dados

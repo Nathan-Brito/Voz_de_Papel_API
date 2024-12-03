@@ -18,7 +18,7 @@ Este projeto é uma aplicação para auxiliar pessoas com deficiência visual a 
  - Banco de Dados: PostgreSQL;
  - Outras Ferramentas: Docker.
 
-## Uso do Aplicativo: 
+## Uso do Aplicativo (Somente para Android): 
     1 - Baixe 'Voz_De_Papel.apk', disponível em: <https://github.com/Nathan-Brito/Voz_de_Papel_API>;
     2 - Instale o aplicativo;
     3 - Abra o aplicativo e ouça atentamente as instruções de voz;

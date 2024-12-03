@@ -40,7 +40,7 @@ Este projeto é uma aplicação para auxiliar pessoas com deficiência visual a 
 Antes de começar, certifique-se de ter os seguintes itens instalados:
  - Python 3.12; 
  - Docker; 
- - Biblioteca OCR: <https://sourceforge.net/projects/tesseract-ocr.mirror/>
+ - Biblioteca OCR: <https://github.com/UB-Mannheim/tesseract/wiki>
     - Após instalação, digite no terminal:
         - plaintext
         - pip install tesseract

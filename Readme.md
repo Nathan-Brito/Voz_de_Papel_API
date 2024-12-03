@@ -78,7 +78,7 @@ Antes de começar, certifique-se de ter os seguintes itens instalados:
     7 - Criação das variáveis de ambiente: 
         - Crie um arquivo '.env' na raiz do projeto;
         - Configure as seguintes chaves: 
-             AZURE_KEY=<sua chave da API Azure>
+            AZURE_KEY=<sua chave da API Azure>
             AZURE_REGION=<sua região da API Azure>
             GEMINI_KEY=<sua chave da API Gemini>
             DBNAME=<seu nome do banco de dados>
